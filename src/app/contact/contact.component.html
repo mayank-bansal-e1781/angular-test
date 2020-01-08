@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]='rForm'>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" formControlName="email" [ngClass]="{
+                        'form-control': true,
+                        'is-invalid': !rForm.controls['email'].valid && rForm.controls['email'].touched
+                    }" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                    <div class="invalid-feedback">
+                        Please provide a valid email.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" [ngClass]="{
+                        'form-control': true,
+                        'is-invalid': !rForm.controls['password'].valid && rForm.controls['password'].touched
+                    }" formControlName="password" id="exampleInputPassword1" placeholder="Password">
+                    <div class="invalid-feedback">
+                        Your password should contain minimum a capital letter and Small letter and a digit
+                    </div>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
